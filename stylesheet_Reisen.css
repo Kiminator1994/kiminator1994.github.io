@@ -9,7 +9,7 @@ body {
     overflow: hidden;
     --nav-load-time: 300ms;
     --nav-link-load-time: 500ms;
-    background-image: url("images/Background.jpg");
+    background-image: url("images/Background.JPG");
     background-size: cover;
     background-attachment: fixed;
 }
