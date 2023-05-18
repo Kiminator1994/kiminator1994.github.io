@@ -1,13 +1,6 @@
 // working
 
-// Start/Stop Animation for Slide Show Japan
-let imageList = document.getElementById("imageList")
-imageList.setAttribute("onmousedown","triggerAnimationSlideShowJapan()")
-function triggerAnimationSlideShowJapan(){
-  const running = imageList.style.animationPlayState === 'running'
-  imageList.style.animationPlayState = running ? 'paused' : 'running'
-}
-imageList.addEventListener("mousedown", triggerAnimationSlideShowJapan())
+
 
 //Thailand
 
@@ -29,22 +22,22 @@ track.style.cursor = "grab"
     if(track.dataset.mouseDownAt === "0") return;
     
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-          maxDelta = window.innerWidth / 2.2;
+          maxDelta = window.innerWidth / 2.5;
     
     const percentage = (mouseDelta / maxDelta) * -100,
           nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-          nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-          nextPercentage2 = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+          nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 50), -50);
+          nextPercentage2 = Math.max(Math.min(nextPercentageUnconstrained, 50), -50);
     
     track.dataset.percentage = nextPercentage;
     
     track.animate({
-      transform: `translate(${50 + nextPercentage2}%, 0%)`
+      transform: `translate(${nextPercentage2}%, 0%)`
     }, { duration: 1200, fill: "forwards" });
     
     for(const image of track.getElementsByClassName("image")) {
       image.animate({
-        objectPosition: `${100 + nextPercentage}% center`
+        objectPosition: `${50 + nextPercentage}% center`
       }, { duration: 1200, fill: "forwards" });
     }
   }
@@ -65,7 +58,14 @@ track.style.cursor = "grab"
   track.ontouchmove = e => handleOnMove(e.touches[0]);
 
 
-
+// Start/Stop Animation for Slide Show Vietnam
+let imageList = document.getElementById("imageList")
+imageList.setAttribute("onmousedown","triggerAnimationSlideShowJapan()")
+function triggerAnimationSlideShowJapan(){
+  const running = imageList.style.animationPlayState === 'running'
+  imageList.style.animationPlayState = running ? 'paused' : 'running'
+}
+imageList.addEventListener("mousedown", triggerAnimationSlideShowJapan())
 
   /* Fade in */
 

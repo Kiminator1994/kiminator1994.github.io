@@ -125,28 +125,77 @@ border-radius: 10px;
 
 /*----------Japan-----------*/
 
+.button-left{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(180deg);
+  z-index: 1;
+  top: 40%;
+  left: 20px;
+  width: 4%;
+  height: 8%;
+  border-radius: 100%;
+  background-color: #3d3b3d;
+  opacity: 0.4;
+  font-size: 30px;
+}
 
+.button-left:hover, .button-right:hover{
+  opacity: 0.95;
+}
 
+.button-right{
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  left: 95%;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: #3d3b3d;
+  opacity: 0.4;
+  font-size: 25px;
+}
 
+.image-list-japan{
+  display: flex;
+  list-style: none;
+  margin: 8px;
+  margin-left: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
 
-
+.image-list-japan li {
+  flex-shrink: 0;
+  width: 30%; /* Set the width of visible images */
+  margin: 8px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.image-list-japan img {
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
   /*-------Thailand------*/
 
 .image {
     width: 33vmin;
     height: 42vmin;
     object-fit: cover;
-    object-position: right;
+    object-position: center;
 }
 
 #image-track{
     display: flex;
     gap: 16px;
-    transform: translate(50%, 0%);
     user-select: none;
-    margin: 8px;
-    margin-left: 16px;
     margin-top: 20px;
+    margin-left: 3px;
   }
 
   /*---------China------------*/
@@ -167,6 +216,7 @@ border-radius: 10px;
   margin-left: 16px;
   margin-top: 20px;
 }
+
 .china-ul li:nth-child(2){
   margin: 8px;
   margin-top: 20px;
@@ -174,7 +224,7 @@ border-radius: 10px;
 
 .china-ul li:last-child{
   margin: 8px;
-  margin-right: 37px;
+  margin-right: 16px;
   margin-top: 20px;
 }
 
@@ -209,8 +259,8 @@ animation: slideImages 10s ease-in-out infinite alternate;
   display: flex;
   list-style: none;
   margin: 8px;
-margin-left: 16px;
-margin-top: 20px;
+  margin-left: 16px;
+  margin-top: 20px;
   width: 100%;
 }
 
