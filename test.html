@@ -8,29 +8,8 @@
   </head>
   <body>
    
-    <div class="group1-Wrapper">
-      <a onclick="imageSlider.previous()" class="group1-Prev"></a>
-      <a onclick="imageSlider.next()" class="group1-Next"></a>
-  </div>
-
-    <div id="thumbs">
-      <a onclick="imageSlider.previous()" class="group2-Prev"></a>
-      <a id='auto' onclick="switchAutoAdvance()"></a>
-      <a onclick="imageSlider.next()" class="group2-Next"></a>
-      ... ...
-  </div>
-<script type="text/javascript">
-    function switchAutoAdvance() {
-        imageSlider.switchAuto();
-        switchPlayPauseClass();
-    }
-    function switchPlayPauseClass() {
-        var auto = document.getElementById('auto');
-        var isAutoPlay = imageSlider.getAuto();
-        auto.className = isAutoPlay ? "group2-Pause" : "group2-Play";
-        auto.title = isAutoPlay ? "Pause" : "Play";
-    }
-    switchPlayPauseClass();
-</script>
+    <div class="block">
+      <p>Kim Devaux</p>
+    </div>
   </body>
 </html>

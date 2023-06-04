@@ -70,7 +70,7 @@ nav {
     .grid_container{
         min-height: 88vh;
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns:auto;
         margin: 20px;
         padding: 20px;
         justify-content: left;

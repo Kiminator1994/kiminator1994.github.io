@@ -9,9 +9,8 @@ body {
     overflow-x: hidden;
     --nav-load-time: 300ms;
     --nav-link-load-time: 500ms;
-   /*  background-image: url("images/Background.jpg");
-    background-size: cover;
-    background-attachment: fixed; */
+   background-color: black;
+   color: white;
 }
 
 /* -----Navbar--------*/
@@ -72,24 +71,76 @@ a {
 
 /* ----------*/
 
+.block {
+	position: relative;
+	margin: 80px;
+	width: 85%;
+	height: 0px;
+	background: linear-gradient(0deg, #000, #272727);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 300%;
+  padding: 60px;  
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(50px);
+}
+h1{
+  font-size: 500%;
+  margin: 0;
+  margin-top: 20px;
+}
+
+h2{
+  font-size: 300%;
+  margin: 0;
+}
 .grid_container{
-  border: 2px black solid;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 30% 20% 20% 20%;
   margin: 20px;
   padding: 20px;
-  justify-content: center;
+
   gap: 20px;
 }
 
-
-
 .grid_inner_container{
-  border: 2px black solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  width: fit-content;
+  border-radius: 20%;
+  overflow: hidden;
 }
 
 .grid_inner_item{
@@ -97,7 +148,8 @@ a {
   display: flex;
   justify-content: left;
   flex-direction: column;
-  width: auto;
+  width: max-content;
   margin: 20px;
   padding: 0;
 }
+
