@@ -8,7 +8,10 @@ track.style.cursor = "grab"
     track.style.cursor = "grabbing"
    }
   const handleOnUp = () => {
-    track.dataset.mouseDownAt = "0";  
+    track.dataset.mouseDownAt = "0"; 
+    if(isNaN(track.dataset.percentage))
+    track.dataset.prevPercentage = 0;
+    else
     track.dataset.prevPercentage = track.dataset.percentage;
     track.style.cursor = "grab"
   }
