@@ -1,7 +1,3 @@
-// working
-
-
-
 //Thailand
 
 const track = document.getElementById("image-track");
@@ -22,7 +18,7 @@ track.style.cursor = "grab"
     if(track.dataset.mouseDownAt === "0") return;
     
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-          maxDelta = window.innerWidth / 2.5;
+          maxDelta = window.innerWidth / 2;
     
     const percentage = (mouseDelta / maxDelta) * -100,
           nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
@@ -67,60 +63,3 @@ function triggerAnimationSlideShowJapan(){
 }
 imageList.addEventListener("mousedown", triggerAnimationSlideShowJapan())
 
-  /* Fade in */
-
- /*  //Vietnam
-
-  const track_vietnam = document.getElementById("image-track-vietnam");
-  track_vietnam.style.cursor = "grab"
-
-   const handleOnDown_vietnam = (e) => {
-    track_vietnam.dataset.mouseDownAt = e.clientX
-    track_vietnam.style.cursor = "grabbing"
-   }
-  const handleOnUp_vietnam = () => {
-    track_vietnam.dataset.mouseDownAt = "0";  
-    track_vietnam.dataset.prevPercentage = track.dataset.percentage;
-    track_vietnam.style.cursor = "grab"
-  }
-  
-
-  const handleOnMove_vietnam = e => {
-    if(track_vietnam.dataset.mouseDownAt === "0") return;
-    
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-          maxDelta = window.innerWidth / 2.2;
-    
-    const percentage = (mouseDelta / maxDelta) * -100,
-          nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-          nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-          nextPercentage2 = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-    
-    track_vietnam.dataset.percentage = nextPercentage;
-    
-    track_vietnam.animate({
-      transform: `translate(${50 + nextPercentage2}%, 0%)`
-    }, { duration: 1200, fill: "forwards" });
-    
-    for(const image of track_vietnam.getElementsByClassName("image")) {
-      image.animate({
-        objectPosition: `${100 + nextPercentage}% center`
-      }, { duration: 1200, fill: "forwards" });
-    }
-  }
-
-  /* -- Had to add extra lines for touch events -- 
-  const vietnam_div = document.getElementById("vietnam-div")
-  
-  track_vietnam.onmousedown = e => handleOnDown_vietnam(e);
-  
-  track_vietnam.ontouchstart = e => handleOnDown_vietnam(e.touches[0]);
-  
-  window.onmouseup = e => handleOnUp_vietnam(e);
-  
-  window.ontouchend = e => handleOnUp_vietnam(e.touches[0]);
-  
-  track_vietnam.onmousemove = e => handleOnMove_vietnam(e);
-  
-  track_vietnam.ontouchmove = e => handleOnMove_vietnam(e.touches[0]);
- */
